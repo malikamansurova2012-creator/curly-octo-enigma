@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Little Sky</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.sky {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    to bottom,
+    #829fc5 0%,
+    #c5d9e8 55%,
+    #f3e5d1 100%
+  );
+}
+
+.sun {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #fff0c5;
+  top: 18%;
+  right: 19%;
+  box-shadow: 0 0 65px 20px #fff0c566;
+}
+
+.cloud {
+  position: absolute;
+  width: 130px;
+  height: 36px;
+  border-radius: 50px;
+  background: #fffdf9;
+  opacity: 0.85;
+  animation: drift linear infinite;
+}
+
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.cloud::before {
+  width: 55px;
+  height: 55px;
+  left: 20px;
+  bottom: 10px;
+}
+
+.cloud::after {
+  width: 75px;
+  height: 70px;
+  right: 15px;
+  bottom: 4px;
+}
+
+.c1 {
+  top: 25%;
+  left: -180px;
+  animation-duration: 38s;
+}
+
+.c2 {
+  top: 42%;
+  left: -180px;
+  transform: scale(0.7);
+  animation-duration: 55s;
+  animation-delay: -25s;
+  opacity: 0.6;
+}
+
+.c3 {
+  top: 13%;
+  left: -180px;
+  transform: scale(1.2);
+  animation-duration: 65s;
+  animation-delay: -40s;
+  opacity: 0.7;
+}
+
+.c4 {
+  top: 62%;
+  left: -180px;
+  transform: scale(0.55);
+  animation-duration: 48s;
+  animation-delay: -15s;
+  opacity: 0.45;
+}
+
+@keyframes drift {
+  from {
+    left: -200px;
+  }
+  to {
+    left: calc(100% + 200px);
+  }
+}
+</style>
+</head>
+
+<body>
+  <main class="sky">
+    <div class="sun"></div>
+    <div class="cloud c1"></div>
+    <div class="cloud c2"></div>
+    <div class="cloud c3"></div>
+    <div class="cloud c4"></div>
+  </main>
+</body>
+</html>
